@@ -1,0 +1,12 @@
+# Naija School Manager v2.0 — backend requirements (pinned)
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+sqlalchemy==2.1.1
+pydantic==2.13.5
+python-jose[cryptography]==3.5.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.32
+# extras resolved for the [..] groups above + postgres support
+bcrypt==4.0.1  # last version compatible with passlib 1.7.4
+cryptography==50.0.1
+psycopg2-binary==2.9.13

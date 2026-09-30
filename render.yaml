@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: naija-school-manager-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: SUPERADMIN_USER
+        value: owner
+      - key: SUPERADMIN_PASSWORD
+        sync: false # <-- set this in the Render dashboard (keep it secret, only you know it)
+      - key: DATABASE_URL
+        sync: false # <-- paste your Postgres URL here (e.g. from Supabase: postgresql://...)
